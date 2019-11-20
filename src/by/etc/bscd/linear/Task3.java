@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 
 public class Task3 {
-    private static Scanner scanner = new Scanner(System.in);
     private static double x;
     private static double y;
 
@@ -20,6 +19,16 @@ public class Task3 {
     }
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter angle: ");
+
+        while (!scanner.hasNextDouble()) {
+            scanner.next();
+            System.out.println("Enter angle: ");
+        }
+
         x = scanner.nextDouble();
         y = scanner.nextDouble();
 

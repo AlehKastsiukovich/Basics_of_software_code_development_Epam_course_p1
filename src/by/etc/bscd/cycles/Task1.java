@@ -9,12 +9,21 @@ import java.util.Scanner;
  */
 
 public class Task1 {
+
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter number: ");
 
         int number = 0;
         while(true) {
+
+            while (!scanner.hasNextInt()) {
+                scanner.next();
+                System.out.println("Enter number: ");
+            }
+
             number = scanner.nextInt();
 
             if (number >= 1) {

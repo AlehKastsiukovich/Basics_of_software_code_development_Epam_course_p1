@@ -11,12 +11,18 @@ import java.util.Scanner;
 public class Task6 {
     private static int x;
     private static int y;
-    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Введите х: ");
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter x then y: ");
+
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+        }
+
         x = scanner.nextInt();
-        System.out.println("Введите y: ");
         y = scanner.nextInt();
 
         if ((x >= -4) && (x <= 4) && (y >= -3) && (y <= 4)) {

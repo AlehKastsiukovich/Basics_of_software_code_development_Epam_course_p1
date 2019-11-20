@@ -11,7 +11,7 @@ public class Task2 {
     private static int a;
     private static int b;
     private static int h;
-    private static Scanner scanner = new Scanner(System.in);
+
 
     public static void function() {
         for (int i = a; i <= b; i = i + h) {
@@ -24,10 +24,21 @@ public class Task2 {
     }
 
     public static void main(String[] args) {
+        @SuppressWarnings("resouce")
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("enter a: ");
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+        }
+
         a = scanner.nextInt();
 
         System.out.println("enter b: ");
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+        }
+
         while (true) {
             b = scanner.nextInt();
             if (b >= a) {
@@ -36,6 +47,10 @@ public class Task2 {
         }
 
         System.out.println("enter h: ");
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+        }
+
         h = scanner.nextInt();
 
         function();

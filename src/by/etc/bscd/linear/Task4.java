@@ -8,19 +8,28 @@ import java.util.Scanner;
  */
 
 public class Task4 {
-    private static Scanner scanner = new Scanner(System.in);
     private static float after;
     private static float before;
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
+        while (!scanner.hasNextFloat()) {
+            scanner.next();
+        }
+
         after = scanner.nextFloat();
         System.out.println("After modification: " + after);
 
-        float temp1 = (int) after;
-        float temp2 = temp1 * 0.001f;
-        float temp3 = 0.333f * 1000;
+        int temp1 = (int) after;
+        System.out.println(temp1);
 
-        before = temp3 + temp2;
+        int temp2 = (int) ((after - temp1) * 1000);
+        System.out.println(temp2);
+
+        before = temp2 + temp1 * 0.001f;
+
         System.out.println("Before modification: " + before);
     }
 }

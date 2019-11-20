@@ -10,7 +10,6 @@ public class Task1 {
     private static int c;
     private static int z;
 
-
     public static void function(int a, int b, int c) {
         z = ((a-3) * b/2) + c;
     }

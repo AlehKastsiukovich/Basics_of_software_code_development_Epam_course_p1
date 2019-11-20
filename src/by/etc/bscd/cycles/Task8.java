@@ -11,8 +11,19 @@ import java.util.TreeSet;
 public class Task8 {
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter two numbers : ");
+
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+        }
         int firstNum = scanner.nextInt();
+
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+        }
         int secondNum = scanner.nextInt();
 
         String firstNumStr = String.valueOf(firstNum);

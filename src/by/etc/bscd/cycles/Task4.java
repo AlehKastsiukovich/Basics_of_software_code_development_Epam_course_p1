@@ -5,6 +5,7 @@ package by.etc.bscd.cycles;
  */
 
 public class Task4 {
+
     public static void main(String[] args) {
         long multiplication = 1;
 

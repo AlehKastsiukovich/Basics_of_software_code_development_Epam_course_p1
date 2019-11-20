@@ -14,9 +14,10 @@ public class Task5 {
     private static double e;
     private static double sum;
 
-    public static void function() {
+    public static void findSum() {
         while (true) {
             a = (1 / Math.pow(2, n)) + (1 / Math.pow(3, n));
+
             if (Math.abs(a) >= e) {
                 sum += a;
                 n++;
@@ -28,10 +29,21 @@ public class Task5 {
     }
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
+
+        while (!scanner.hasNextDouble()) {
+            scanner.next();
+        }
+
         n = scanner.nextDouble();
+
+        while (!scanner.hasNextDouble()) {
+            scanner.next();
+        }
+
         e = scanner.nextDouble();
 
-        function();
+        findSum();
     }
 }

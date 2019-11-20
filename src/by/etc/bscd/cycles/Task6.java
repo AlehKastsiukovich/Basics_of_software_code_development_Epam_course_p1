@@ -9,14 +9,16 @@ import java.util.Scanner;
 
 public class Task6 {
 
-    public static void function(char c) {
+    public static void showMatching(char c) {
         System.out.println("Символ: "+ c +" и его численное обозначение: " + (int)c);
     }
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
+
         char c = scanner.next().charAt(0);
 
-        function(c);
+        showMatching(c);
     }
 }

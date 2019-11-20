@@ -8,17 +8,25 @@ import java.util.Scanner;
  */
 
 public class Task5 {
-    private static Scanner scanner = new Scanner(System.in);
     private static int timeSec;
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter time in seconds: ");
+
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+            System.out.println("Enter time in seconds: ");
+        }
+
         timeSec = scanner.nextInt();
 
-        int hh = timeSec/3600;
-        int hhMod = timeSec%3600;
-        int mm = hhMod/60;
-        int sec = hhMod%60;
+        int hh = timeSec / 3600;
+        int hhMod = timeSec % 3600;
+        int mm = hhMod / 60;
+        int sec = hhMod % 60;
 
         System.out.printf("%02dч %02dмин %02dс" , hh, mm, sec);
     }
